@@ -1,0 +1,15 @@
+{% extends "kazkozvuks/base.html" %}
+
+{% block content %}
+
+    <p>Новини</p>
+
+    <ul>
+        {% for news in newss %}
+            <li>{{ newss }}</li>
+        {% empty %}
+            <li>Ще немає доданих новин</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
