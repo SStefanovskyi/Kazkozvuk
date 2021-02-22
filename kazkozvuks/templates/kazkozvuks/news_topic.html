@@ -1,0 +1,19 @@
+{% extends 'kazkozvuks/base.html' %}
+
+{% block content %}
+
+    <p>Заголовок новини: {{ news_topic }}</p>
+
+    <p>Тіло новини:</p>
+    <ui>
+        {% for news_entry in news_entries %}
+            <li>
+                <p>{{ news_entry.date_added|date:'M d, Y H:i' }}</p>
+                <p>{{ news_entry.text|linebreaks }}</p>
+            </li>
+        {% empty %}
+            <li>Ще немає новини</li>
+        {% endfor %}
+    </ui>
+
+{% endblock content %}

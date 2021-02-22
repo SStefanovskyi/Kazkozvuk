@@ -1,4 +1,5 @@
 from django.db import models
+from embed_video.fields import EmbedVideoField
 
 
 # Create your models here.
@@ -14,6 +15,7 @@ class News_Entry(models.Model):
     news = models.ForeignKey(News, on_delete=models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    video = EmbedVideoField(blank=True, verbose_name='Відео')
 
     class Meta:
         verbose_name_plural = 'news_entries'
